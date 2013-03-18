@@ -1,5 +1,5 @@
 {
-  "name": "commandQueue",
+  "name": "mf-commandQueue",
   "version": "0.0.1",
   "description": "A utility for listening to a Queue and terminating the current process",
   "main": "index.js",
