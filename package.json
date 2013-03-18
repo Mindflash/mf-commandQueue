@@ -4,7 +4,7 @@
   "description": "A utility for listening to a Queue and terminating the current process",
   "main": "index.js",
   "dependencies": {
-    "amqpUtil": "~0.0.1"
+    "amqputil": "~0.0.1"
   },
   "devDependencies": {
 	  "mf-common": "git+ssh://git@github.com:Mindflash/mf-common.git#dev",
