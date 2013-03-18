@@ -3,7 +3,7 @@ var pubSub = require('amqpUtil');
 
 var deferredCommands = [];
 
-module.exports = function (config,defaultCommand) {
+module.exports = function (config) {
 	pubSub.connect(config.queueUri, config.commandQueue, function connectCb(sub) {
 		sub.subscribeToFanoutQueue(function (msgEnv) {
 			var msg = msgEnv.data;
@@ -24,7 +24,7 @@ module.exports = function (config,defaultCommand) {
 	var defaultCommandMap = {
 		restart:function (msg, cb) {
 			console.log('Restart requested -- goodbye cruel world! pid:' + process.pid);
-			defaultCommand;
+			process.exit(0);
 		}
 	};
 
