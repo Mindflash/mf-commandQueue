@@ -1,5 +1,5 @@
 "use strict";
-var pubSub = require('amqpUtil');
+var pubSub = require('amqputil');
 
 var deferredCommands = [];
 
