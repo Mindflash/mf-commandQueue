@@ -4,7 +4,8 @@ var pubSub = require('amqputil');
 var deferredCommands = [];
 
 module.exports = function (config) {
-	pubSub.connect(config.queueUri, config.commandQueue, function connectCb(sub) {
+	var argv = require('optimist').default('cqueue',config.commandQueue).argv;
+	pubSub.connect(config.queueUri, argv.cqueue, function connectCb(sub) {
 		sub.subscribeToFanoutQueue(function (msgEnv) {
 			var msg = msgEnv.data;
 			deferredCommands.push(function (cb) {
