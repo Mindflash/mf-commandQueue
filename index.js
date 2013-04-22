@@ -1,10 +1,11 @@
 "use strict";
-var pubSub = require('amqpUtil');
+var pubSub = require('amqputil');
 
 var deferredCommands = [];
 
-module.exports = function (config,defaultCommand) {
-	pubSub.connect(config.queueUri, config.commandQueue, function connectCb(sub) {
+module.exports = function (config) {
+	var argv = require('optimist').default('cqueue',config.commandQueue).argv;
+	pubSub.connect(config.queueUri, argv.cqueue, function connectCb(sub) {
 		sub.subscribeToFanoutQueue(function (msgEnv) {
 			var msg = msgEnv.data;
 			deferredCommands.push(function (cb) {
@@ -24,7 +25,7 @@ module.exports = function (config,defaultCommand) {
 	var defaultCommandMap = {
 		restart:function (msg, cb) {
 			console.log('Restart requested -- goodbye cruel world! pid:' + process.pid);
-			defaultCommand;
+			process.exit(0);
 		}
 	};
 
