@@ -1,16 +1,16 @@
 {
   "name": "mf-commandQueue",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A utility for listening to a Queue and terminating the current process",
   "main": "index.js",
   "dependencies": {
-  	"amqputil": "~0.0.1",
-	"optimist": "~0.3.4"
+    "amqputil": "~0.0.1",
+    "optimist": "~0.3.4"
   },
   "devDependencies": {
-	"mf-common": "git+ssh://git@github.com:Mindflash/mf-common.git",
-	"tap": "~0.4.0",
-	"mockery": "~1.4.0"
+    "mf-common": "git+ssh://git@github.com:Mindflash/mf-common.git",
+    "mockery": "~1.4.0",
+    "tap": "~0.4.0"
   },
   "scripts": {
     "test": "tap test/*.js"
@@ -18,5 +18,5 @@
   "repository": "",
   "author": "Mindflash",
   "license": "X11",
-  "private":true
+  "private": true
 }
