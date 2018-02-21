@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "amqputil": "~0.0.1",
-    "mf-common": "git+ssh://git@github.com:Mindflash/mf-common.git#master",
+    "mf-common": "git+ssh://git@github.com:Mindflash/mf-common.git#v2.4.x",
     "optimist": "~0.3.4"
   },
   "devDependencies": {
